@@ -5,18 +5,24 @@ import { useEffect } from 'react'
 import getTasks from './service/getTasks'
 import './styles/style.css'
 
+let testFlag = false
+
 function App() {
-  const [state, setState] = useState([])
+  const [task, setTasks] = useState([])
   useEffect(() => {
-    console.log("start")
-    getTasks().then((data) => {
-      setState(data.data)
+    if (testFlag === false)
+    {
+      console.log("start")
+      getTasks().then((data) => {
+      setTasks(data.data.todos)
+      testFlag = true
     })
-  },[])
+    }
+  },[testFlag])
   return (
     <>
-    <Taskbtn />
-    <div>{(data) => <div className='taskholder'>{data.map(item => <Task key={item.id} taskData={item}/>)}</div>}</div>
+      <Taskbtn />
+      <div className='taskContainer'>{task.map((item) => <Task key={item.id} taskData={item}/>)}</div>
     </>
   )
 }
