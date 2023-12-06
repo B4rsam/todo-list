@@ -22,7 +22,7 @@ function App() {
   return (
     <>
       <Taskbtn />
-      <div className='taskContainer'>{task.map((item) => <Task key={item.id} taskData={item}/>)}</div>
+      <div className='container taskContainer'>{task.map((item) => <Task key={item.id} taskData={item}/>)}</div>
     </>
   )
 }

@@ -1,0 +1,33 @@
+:root {
+    --primaryColor: #3498eb;
+    --taskBg: #b7bbbd;
+    --containerBg: #919394;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.container {
+    border-radius: 8px;
+    padding-inline: 8px;
+    padding-block: 1px;
+}
+
+.taskContainer {
+    background-color: var(--containerBg);
+}
+
+.taskCard {
+    background-color: var(--taskBg);
+    margin-block: 4px;
+}
+
+.btn {
+    border-radius: 4px;
+    padding-block: 8px;
+    padding-inline: 16px;
+    margin-block: 8px;
+}
+
+.taskbtn {
+    color: white;
+    background-color: var(--primaryColor);
+}
