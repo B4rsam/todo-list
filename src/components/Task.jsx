@@ -1,7 +1,6 @@
 import '../styles/style.css'
-import { deleteTask } from '../service/apiRequest'
 
-const Task = ({taskData}) => {
+const Task = ({taskData, onDelete}) => {
     return (
         <div className="taskCard container">
             <div>
@@ -13,7 +12,7 @@ const Task = ({taskData}) => {
                     <input className="taskCheck" type="checkbox"></input>
                     <span>Completed</span> 
                 </div>
-                <button className='btn delbtn' id={taskData.id} onClick={() => handleTaskDeletion(taskData.id)}>Delete Task</button>
+                <button className='btn delbtn' id={taskData.id} onClick={() => onDelete(taskData.id)}>Delete Task</button>
             </div>
         </div>
     )
