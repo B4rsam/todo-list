@@ -1,4 +1,4 @@
-import getTasks from "../service/getTasks"
+import getTasks from "../service/apiRequest"
 import { useState } from 'react'
 
 const Taskbtn = () => {
@@ -7,7 +7,7 @@ const Taskbtn = () => {
 
     }
     return (
-        <button className="btn taskbtn" onClick={() => console.log("btn")}>Add Task</button>
+        <button className="btn taskbtn" onClick={handleTaskAddition}>Add Task</button>
     )
 }
 
