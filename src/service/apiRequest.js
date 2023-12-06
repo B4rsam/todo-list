@@ -8,4 +8,8 @@ export function deleteTask(id) {
     return axios.delete(`https://dummyjson.com/todos/${id}`).then(console.log(`Task ID ${id} deleted`))
 }
 
+export function addTask() {
+    console.log("add")
+}
+
 export default getTasks
