@@ -1,9 +1,9 @@
 import getTasks from "../service/apiRequest"
 import { useState } from 'react'
 
-const Taskbtn = ({onAdd}) => {
+const Taskbtn = ({showBox}) => {
     return (
-        <button className="btn taskbtn" onClick={onAdd}>Add Task</button>
+        <button className="btn taskbtn" onClick={showBox}>Add Task</button>
     )
 }
 

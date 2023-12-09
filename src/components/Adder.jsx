@@ -1,7 +1,7 @@
 import '../styles/style.css'
 import { addTask } from '../service/apiRequest'
 
-const AddTask = ({onAdd}) => {
+const AddTask = ({onAdd, onExit}) => {
     const handleSubmit = () => {
         const task = {
             id: 100,
@@ -17,7 +17,7 @@ const AddTask = ({onAdd}) => {
         <div className='container addBox'>
             <div className='header addheader'>
                <h1>Add a Task</h1> 
-               <button className='btn delbtn'>Cancel</button>
+               <button className='btn delbtn' onClick={onExit}>Cancel</button>
             </div>
             <form>
                 <input id="taskData" className="taskDescription" placeholder='Task Description'></input>

@@ -8,6 +8,7 @@ import './styles/style.css'
 
 function App() {
   const [task, setTasks] = useState([])
+  const [show, setShow] = useState(false)
 
   useEffect(() => {
     handleUpdate();
@@ -31,11 +32,14 @@ function App() {
     setTasks(task.concat(inTask))
     console.log(task)
   }
+  const showAdder = () => {
+    setShow(!show)
+  }
 
   return (
     <>
-      <AddTask onAdd={dummyUpdate}/>
-      <Taskbtn />
+      {show && <AddTask onExit={showAdder} onAdd={dummyUpdate}/>}
+      <Taskbtn showBox={showAdder}/>
       <div className='container taskContainer'>{task.map((item) => <Task state={task} key={item.id} taskData={item} onDelete={handleTaskDeletion}/>)}</div>
     </>
   )
