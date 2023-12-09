@@ -2,7 +2,8 @@ import { useState } from 'react'
 import Taskbtn from './components/Taskbtn'
 import Task from './components/Task'
 import { useEffect } from 'react'
-import {getTasks, deleteTask} from './service/apiRequest'
+import {getTasks, deleteTask, addTask} from './service/apiRequest'
+import AddTask from './components/Adder'
 import './styles/style.css'
 
 let testFlag = false
@@ -25,10 +26,15 @@ function App() {
             setTasks(filteredItem)
         }
     )
-}
+  }
+  const handleTaskAddition = () => {
+    
+  }
+
   return (
     <>
-      <Taskbtn />
+    <AddTask />
+      <Taskbtn onAdd={handleTaskAddition}/>
       <div className='container taskContainer'>{task.map((item) => <Task state={task} key={item.id} taskData={item} onDelete={handleTaskDeletion}/>)}</div>
     </>
   )
