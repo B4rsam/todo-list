@@ -1,5 +1,4 @@
 import axios, {isCancel, AxiosError} from 'axios';
-import Task from '../components/Task';
 
 export function getTasks() {
     return axios('https://dummyjson.com/todos')
@@ -13,7 +12,7 @@ export function addTask(taskBody,taskStatus) {
     axios.put("https://dummyjson.com/todos/add", {
         body: taskBody,
         completed: taskStatus,
-    }).then(console.log("Task Added"))
+    }).then(console.log("Task Added")).then(handleUpdate)
 }
 
 export default getTasks
