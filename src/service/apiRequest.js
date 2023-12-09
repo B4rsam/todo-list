@@ -8,11 +8,11 @@ export function deleteTask(id) {
     return axios.delete(`https://dummyjson.com/todos/${id}`).then(console.log(`Task ID ${id} deleted`))
 }
 
-export function addTask(taskBody,taskStatus) {
+export function addTask(task) {
     axios.post("https://dummyjson.com/todos/add", {
-        todo: taskBody,
-        completed: taskStatus,
-        userId: 100,
+        todo: task.todo,
+        completed: task.completed,
+        userId: 1,
     }).then(console.log("Task Added"))
 }
 

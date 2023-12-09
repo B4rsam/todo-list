@@ -3,13 +3,14 @@ import { addTask } from '../service/apiRequest'
 
 const AddTask = ({onAdd}) => {
     const handleSubmit = () => {
-        const taskDescriptionValue = document.getElementById("taskData").value
-        const taskStatus = document.getElementById("taskStatus").checked
-        if (taskDescriptionValue !== null)
-        {
-            addTask(taskDescriptionValue,taskStatus)
+        const task = {
+            id: 100,
+            todo: document.getElementById("taskData").value,
+            completed: document.getElementById("taskStatus").checked,
+            userId: 200
         }
-        onAdd;
+        addTask(task)
+        onAdd(task)
     }
 
     return (
