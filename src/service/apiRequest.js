@@ -9,10 +9,11 @@ export function deleteTask(id) {
 }
 
 export function addTask(taskBody,taskStatus) {
-    axios.put("https://dummyjson.com/todos/add", {
-        body: taskBody,
+    axios.post("https://dummyjson.com/todos/add", {
+        todo: taskBody,
         completed: taskStatus,
-    }).then(console.log("Task Added")).then(handleUpdate)
+        userId: 100,
+    }).then(console.log("Task Added"))
 }
 
 export default getTasks

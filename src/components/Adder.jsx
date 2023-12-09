@@ -1,7 +1,7 @@
 import '../styles/style.css'
 import { addTask } from '../service/apiRequest'
 
-const AddTask = () => {
+const AddTask = ({onAdd}) => {
     const handleSubmit = () => {
         const taskDescriptionValue = document.getElementById("taskData").value
         const taskStatus = document.getElementById("taskStatus").checked
@@ -9,6 +9,7 @@ const AddTask = () => {
         {
             addTask(taskDescriptionValue,taskStatus)
         }
+        onAdd;
     }
 
     return (

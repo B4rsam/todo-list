@@ -6,8 +6,6 @@ import {getTasks, deleteTask, addTask} from './service/apiRequest'
 import AddTask from './components/Adder'
 import './styles/style.css'
 
-
-
 function App() {
   const [task, setTasks] = useState([])
   useEffect(() => {
@@ -26,10 +24,10 @@ function App() {
     getTasks().then((data) => {
     setTasks(data.data.todos)})
   }
-
+ 
   return (
     <>
-    <AddTask />
+    <AddTask onAdd={handleUpdate}/>
       <Taskbtn />
       <div className='container taskContainer'>{task.map((item) => <Task state={task} key={item.id} taskData={item} onDelete={handleTaskDeletion}/>)}</div>
     </>
