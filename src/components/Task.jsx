@@ -9,7 +9,7 @@ const Task = ({taskData, onDelete}) => {
             </div>
             <div className='taskInput'>
                 <div className='chkbx'>
-                    <input className="taskCheck" type="checkbox"></input>
+                    <input className="taskCheck" type="checkbox" checked={taskData.completed} ></input>
                     <span>Completed</span> 
                 </div>
                 <button className='btn delbtn' id={taskData.id} onClick={() => onDelete(taskData.id)}>Delete Task</button>
