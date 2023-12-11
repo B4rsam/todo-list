@@ -3,7 +3,6 @@ import Taskbtn from './components/Taskbtn'
 import Task from './components/Task'
 import { useEffect } from 'react'
 import {getTasks, deleteTask, addTask} from './service/apiRequest'
-import AddTask from './components/Adder'
 import './styles/style.css'
 
 function App() {

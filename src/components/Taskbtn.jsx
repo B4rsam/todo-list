@@ -1,8 +1,7 @@
-import getTasks from "../service/apiRequest"
 import { useState } from 'react'
 import AddTask from "./Adder"
 
-const Taskbtn = ({showBox, addFunction}) => {
+const Taskbtn = ({addFunction}) => {
     const [modal, showModal] = useState(false)
 
     const handleModal = () => {
