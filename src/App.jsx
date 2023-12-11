@@ -8,7 +8,7 @@ import './styles/style.css'
 
 function App() {
   const [task, setTasks] = useState([])
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(true)
 
   useEffect(() => {
     handleUpdate();
@@ -25,12 +25,12 @@ function App() {
   const handleUpdate = () => {
     getTasks().then((data) => {
     setTasks(data.data.todos)})
-    console.log(task)
+    showAdder();
   }
  
   const dummyUpdate = (inTask) => {
     setTasks(task.concat(inTask))
-    console.log(task)
+    showAdder();
   }
   const showAdder = () => {
     setShow(!show)

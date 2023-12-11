@@ -48,6 +48,7 @@
 
 .addBox {
     background-color: var(--taskBg);
+    opacity: 1;
 }
 
 .header {
