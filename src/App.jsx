@@ -8,7 +8,6 @@ import './styles/style.css'
 
 function App() {
   const [task, setTasks] = useState([])
-  const [show, setShow] = useState(true)
 
   useEffect(() => {
     handleUpdate();
@@ -25,22 +24,16 @@ function App() {
   const handleUpdate = () => {
     getTasks().then((data) => {
     setTasks(data.data.todos)})
-    showAdder();
   }
- 
+
   const dummyUpdate = (inTask) => {
     setTasks(task.concat(inTask))
-    showAdder();
-  }
-  const showAdder = () => {
-    setShow(!show)
   }
 
   return (
     <>
-      {show && <AddTask onExit={showAdder} onAdd={dummyUpdate}/>}
-      <Taskbtn showBox={showAdder}/>
-      <div className='container taskContainer'>{task.map((item) => <Task state={task} key={item.id} taskData={item} onDelete={handleTaskDeletion}/>)}</div>
+      <Taskbtn addFunction={dummyUpdate} />
+      <div className='container taskContainer'>{task.map((item) => <Task key={item.id} taskData={item} onDelete={handleTaskDeletion}/>)}</div>
     </>
   )
 }
