@@ -11,8 +11,8 @@ const Taskbtn = ({showBox, addFunction}) => {
 
     return (
         <>
-        <button className="btn taskbtn" onClick={handleModal}>Add Task</button>
-        {modal && <AddTask addFunction={addFunction} onExit={handleModal}/>}
+            <button className="btn taskbtn" onClick={handleModal}>Add Task</button>
+            {modal && <AddTask addFunction={addFunction} onExit={handleModal}/>}
         </>
     )
 }
