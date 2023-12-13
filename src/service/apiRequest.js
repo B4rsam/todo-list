@@ -5,7 +5,7 @@ export function getTasks() {
 }
 
 export function deleteTask(id) {
-    return axios.delete(`https://dummyjson.com/todos/${id}`).then(console.log(`Task ID ${id} deleted`))
+    return axios.delete(`https://dummyjson.com/todos/${id}`)
 }
 
 export function addTask(task) {
@@ -13,7 +13,7 @@ export function addTask(task) {
         todo: task.todo,
         completed: task.completed,
         userId: 1,
-    }).then(console.log("Task Added"))
+    })
 }
 
 export default getTasks
