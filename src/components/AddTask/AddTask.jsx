@@ -21,10 +21,13 @@ const AddTask = ({onAdd, onExit}) => {
         // onExit();
 
         setLoading(true)
-        addTask(task)
-        setLoading(false)
-        onAdd(task)
-        onExit()
+        addTask(task).then(() => {
+            onAdd(task)  
+        }).catch().finally(() => {
+            setLoading(false)
+            onExit()
+        })
+        
     }
 
     const handleDescription = (event) => {

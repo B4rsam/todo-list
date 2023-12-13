@@ -10,7 +10,7 @@ function deleteTask(id) {
 }
 
 function addTask(task) {
-    apiInstance.post("/add", {
+    return apiInstance.post("/add", {
         todo: task.todo,
         completed: task.completed,
         userId: 1,
