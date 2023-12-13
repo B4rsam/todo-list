@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import AddTask from "../AddTask/AddTask"
+import './taskbtn.css'
 
 const Taskbtn = ({addFunction}) => {
     const [modal, showModal] = useState(false)

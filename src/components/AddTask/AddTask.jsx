@@ -1,4 +1,5 @@
 import { addTask } from '../../service/apiRequest'
+import './addtask.css'
 
 const AddTask = ({addFunction, onExit}) => {
     const handleSubmit = () => {
