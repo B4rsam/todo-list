@@ -1,4 +1,3 @@
-import axios, {isCancel, AxiosError} from 'axios';
 import apiInstance from './apiInstance';
 
 const getTasks = async () => {

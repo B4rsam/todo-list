@@ -26,6 +26,10 @@ const useViewController = () => {
         })
     }
 
+    const dummyUpdate = (inTask) => {
+        setTasks(task.concat(inTask))
+    }
+
     const details = useMemo(() => ({getTaskData, handleDeletion}), [task])
     const taskIds = useMemo(() => task.map(({id}) => id), [task])
     const taskList = useMemo(() => taskIds.map((id) => <Task key={id} id={id}/>), [taskIds])
@@ -40,7 +44,8 @@ const useViewController = () => {
 
     return {
         taskList,
-        details
+        details,
+        dummyUpdate
     }
 }
 

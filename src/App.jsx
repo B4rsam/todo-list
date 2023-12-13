@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { createContext } from 'react'
 import Taskbtn from './components/TaskBtn/Taskbtn'
 import useViewController from './utils/useViewController'
 
@@ -7,7 +7,8 @@ export const TaskProvider = createContext();
 function App() {
   const {
     taskList,
-    details
+    details,
+    dummyUpdate
   } = useViewController();
 
   return (
