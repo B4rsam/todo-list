@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-      <Taskbtn />
+      <Taskbtn onAdd={dummyUpdate}/>
       <TaskProvider.Provider value={details}>
           <div className='container taskContainer'>{taskList}</div>   
       </TaskProvider.Provider>

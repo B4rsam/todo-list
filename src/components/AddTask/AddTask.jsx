@@ -2,10 +2,13 @@ import { addTask } from '../../service/apiRequest'
 import { useState } from 'react'
 import './addtask.css'
 
-const AddTask = ({addFunction, onExit}) => {
+const AddTask = ({onAdd, onExit}) => {
     const [desc, setDesc] = useState("")
     const [status, setStatus] = useState(false)
-    
+    const [task, setTask] = useState({
+        todo: desc,
+        completed: status
+    })
     const handleSubmit = () => {
         // const task = {
         //     id: 100,
@@ -14,17 +17,22 @@ const AddTask = ({addFunction, onExit}) => {
         //     userId: 200
         // }
         // addTask(task)
-        // addFunction(task)
+        // onAdd(task)
         // onExit();
-        console.log(desc)
-        console.log(status)
+        console.log(task)
     }
 
     const handleDescription = (event) => {
-        setDesc(event.target.value)
+        setTask({
+            todo: event.target.value,
+            completed: task.completed
+        })
     }
     const handleCheckbox = (event) => {
-        setStatus(event.target.checked)
+        setTask({
+            todo: task.todo,
+            completed: event.target.checked
+        })
     }
 
     return (
