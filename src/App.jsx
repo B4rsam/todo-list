@@ -1,37 +1,21 @@
-import { useState } from 'react'
+import { createContext, useState } from 'react'
 import Taskbtn from './components/TaskBtn/Taskbtn'
-import Task from './components/Task/Task'
-import { useEffect } from 'react'
-import {getTasks, deleteTask, addTask} from './service/apiRequest'
+import useViewController from './utils/useViewController'
+
+export const TaskProvider = createContext();
 
 function App() {
-  const [task, setTasks] = useState([])
-
-  useEffect(() => {
-    handleUpdate();
-  },[])
-
-  const handleTaskDeletion = (id) => {
-    deleteTask(id).then(() => {
-            const filteredItem = task.filter((task) => task.id !== id)
-            setTasks(filteredItem)
-        }
-    )
-  }
-
-  const handleUpdate = () => {
-    getTasks().then((data) => {
-    setTasks(data.data.todos)})
-  }
-
-  const dummyUpdate = (inTask) => {
-    setTasks(task.concat(inTask))
-  }
-
+  const {
+    taskList,
+    details
+  } = useViewController()
+  
   return (
     <>
-      <Taskbtn addFunction={dummyUpdate} />
-      <div className='container taskContainer'>{task.map((item) => <Task key={item.id} taskData={item} onDelete={handleTaskDeletion}/>)}</div>
+      <Taskbtn />
+      <TaskProvider.Provider value={details}>
+        <div className='container taskContainer'>{taskList}</div>   
+      </TaskProvider.Provider>
     </>
   )
 }

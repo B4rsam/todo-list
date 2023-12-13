@@ -1,6 +1,11 @@
+import { TaskProvider } from '../../App';
 import './task.css'
+import {memo, useContext} from "react";
 
-const Task = ({taskData, onDelete}) => {
+const Task = ({id}) => {
+    const {getTaskData, handleDeletion} = useContext(TaskProvider)
+    const taskData = getTaskData(id)
+
     return (
         <div className="taskCard container">
             <div>
@@ -9,13 +14,13 @@ const Task = ({taskData, onDelete}) => {
             </div>
             <div className='taskInput'>
                 <div className='chkbx'>
-                    <input className="taskCheck" type="checkbox" defaultChecked={taskData.completed} ></input>
+                    <input className="taskCheck" type="checkbox" defaultChecked={taskData.completed} />
                     <span>Completed</span> 
                 </div>
-                <button className='btn delbtn' id={taskData.id} onClick={() => onDelete(taskData.id)}>Delete Task</button>
+                <button className='btn delbtn' id={taskData.id} onClick={() => handleDeletion(taskData.id)}>Delete Task</button>
             </div>
         </div>
     )
 }
 
-export default Task
+export default memo(Task)
