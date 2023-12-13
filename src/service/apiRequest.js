@@ -1,19 +1,21 @@
 import axios, {isCancel, AxiosError} from 'axios';
+import apiInstance from './apiInstance';
 
-export function getTasks() {
-    return axios('https://dummyjson.com/todos')
+const getTasks = async () => {
+    const response = apiInstance.get()
+    return response
 }
 
-export function deleteTask(id) {
-    return axios.delete(`https://dummyjson.com/todos/${id}`)
+function deleteTask(id) {
+    return apiInstance.delete(`/${id}`)
 }
 
-export function addTask(task) {
-    axios.post("https://dummyjson.com/todos/add", {
+function addTask(task) {
+    apiInstance.post("/add", {
         todo: task.todo,
         completed: task.completed,
         userId: 1,
     })
 }
 
-export default getTasks
+export {getTasks,deleteTask,addTask}
