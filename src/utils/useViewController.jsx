@@ -11,7 +11,7 @@ const useViewController = () => {
           setTasks(data.data.todos)})
     }
 
-    const getTaskData = () => {
+    const getTaskData = (id) => {
         const tasks = new Map()
         task.forEach((item) => {
             tasks.set(item.id, item)
@@ -38,10 +38,10 @@ const useViewController = () => {
         }
     },[])
 
-    return (
-        details,
-        taskList
-    )
+    return {
+        taskList,
+        details
+    }
 }
 
 export default useViewController

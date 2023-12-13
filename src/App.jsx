@@ -8,13 +8,13 @@ function App() {
   const {
     taskList,
     details
-  } = useViewController()
-  
+  } = useViewController();
+
   return (
     <>
       <Taskbtn />
       <TaskProvider.Provider value={details}>
-        <div className='container taskContainer'>{taskList}</div>   
+          <div className='container taskContainer'>{taskList}</div>   
       </TaskProvider.Provider>
     </>
   )
