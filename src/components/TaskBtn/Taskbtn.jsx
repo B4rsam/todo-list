@@ -2,7 +2,7 @@ import { useState } from 'react'
 import AddTask from "../AddTask/AddTask"
 import './taskbtn.css'
 
-const Taskbtn = ({addFunction}) => {
+const Taskbtn = ({onAdd}) => {
     const [modal, showModal] = useState(false)
 
     const handleModal = () => {
@@ -12,7 +12,7 @@ const Taskbtn = ({addFunction}) => {
     return (
         <>
             <button className="btn taskbtn" onClick={handleModal}>Add Task</button>
-            {modal && <AddTask addFunction={addFunction} onExit={handleModal}/>}
+            {modal && <AddTask onAdd={onAdd} onExit={handleModal}/>}
         </>
     )
 }

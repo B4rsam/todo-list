@@ -3,11 +3,11 @@ import { useState } from 'react'
 import './addtask.css'
 
 const AddTask = ({onAdd, onExit}) => {
-    const [desc, setDesc] = useState("")
-    const [status, setStatus] = useState(false)
+    const [isLoading, setLoading] = useState(false)
     const [task, setTask] = useState({
-        todo: desc,
-        completed: status
+        todo: "",
+        completed: false,
+        id: 100
     })
     const handleSubmit = () => {
         // const task = {
@@ -19,19 +19,26 @@ const AddTask = ({onAdd, onExit}) => {
         // addTask(task)
         // onAdd(task)
         // onExit();
-        console.log(task)
+
+        setLoading(true)
+        addTask(task)
+        setLoading(false)
+        onAdd(task)
+        onExit()
     }
 
     const handleDescription = (event) => {
         setTask({
             todo: event.target.value,
-            completed: task.completed
+            completed: task.completed,
+            id: 100
         })
     }
     const handleCheckbox = (event) => {
         setTask({
             todo: task.todo,
-            completed: event.target.checked
+            completed: event.target.checked,
+            id: 100
         })
     }
 
