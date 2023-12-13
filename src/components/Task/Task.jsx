@@ -1,5 +1,3 @@
-import '../styles/style.css'
-
 const Task = ({taskData, onDelete}) => {
     return (
         <div className="taskCard container">

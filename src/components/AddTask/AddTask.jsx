@@ -1,5 +1,4 @@
-import '../styles/style.css'
-import { addTask } from '../service/apiRequest'
+import { addTask } from '../../service/apiRequest'
 
 const AddTask = ({addFunction, onExit}) => {
     const handleSubmit = () => {

@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import Taskbtn from './components/Taskbtn'
-import Task from './components/Task'
+import Taskbtn from './components/TaskBtn/Taskbtn'
+import Task from './components/Task/Task'
 import { useEffect } from 'react'
 import {getTasks, deleteTask, addTask} from './service/apiRequest'
-import './styles/style.css'
 
 function App() {
   const [task, setTasks] = useState([])
