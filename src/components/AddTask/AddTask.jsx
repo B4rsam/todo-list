@@ -1,6 +1,7 @@
 import { addTask } from '../../service/apiRequest'
 import { useState } from 'react'
 import './addtask.css'
+import '../../styles/global.css'
 
 const AddTask = ({onAdd, onExit}) => {
     const [isLoading, setLoading] = useState(false)
@@ -10,16 +11,6 @@ const AddTask = ({onAdd, onExit}) => {
         id: 100
     })
     const handleSubmit = () => {
-        // const task = {
-        //     id: 100,
-        //     todo: document.getElementById("taskData").value,
-        //     completed: document.getElementById("taskStatus").checked,
-        //     userId: 200
-        // }
-        // addTask(task)
-        // onAdd(task)
-        // onExit();
-
         setLoading(true)
         addTask(task).then(() => {
             onAdd(task)  

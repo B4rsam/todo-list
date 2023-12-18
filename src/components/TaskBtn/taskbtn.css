@@ -1,0 +1,4 @@
+.taskbtn {
+    background-color: var(--main-color);
+    color: var(--main-white-text);
+}

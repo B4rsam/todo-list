@@ -1,0 +1,33 @@
+:root {
+    --main-box-bg: #8e8f91;
+    --main-white-text: white;
+    --main-black-text: black;
+    --main-red: #e81515;
+    --main-color: #34b5e0;
+    --main-card-bg: #cbced4;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn {
+    border-radius: 4px;
+    padding-inline: 12px;
+    padding-block: 4px;
+    border: 1px;
+    border-color: black;
+}
+
+.container {
+    border-radius: 4px;
+    margin: 4px;
+    padding: 4px;
+}
+
+.taskContainer {
+    background-color: var(--main-box-bg);
+}
+
+.delbtn {
+    background-color: var(--main-red);
+    color: var(--main-white-text);
+}
