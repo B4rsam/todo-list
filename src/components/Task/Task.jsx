@@ -17,8 +17,9 @@ const Task = ({id}) => {
                     <input className="taskCheck" type="checkbox" defaultChecked={taskData.completed} />
                     <span>Completed</span> 
                 </div>
-                <button className='btn delbtn' id={taskData.id} onClick={() => handleDeletion(taskData.id)}>Delete Task</button>
+                
             </div>
+            <button className='btn delbtn' id={taskData.id} onClick={() => handleDeletion(taskData.id)}>Delete Task</button>
         </div>
     )
 }

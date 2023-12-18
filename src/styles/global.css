@@ -31,3 +31,8 @@
     background-color: var(--main-red);
     color: var(--main-white-text);
 }
+
+.btnbox {
+    display: flex;
+    justify-content: space-between;
+}
