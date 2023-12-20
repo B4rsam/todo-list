@@ -1,3 +1,23 @@
 .taskCard {
     background-color: var(--main-card-bg);
 }
+
+.delbtn {
+    padding: 4px;
+    color: var(--main-red);
+    background-color: rgba(0,0,0,0);
+    font-size: 18px;
+}
+
+.delbtn:hover {
+    color: var(--main-white-text)
+}
+
+.taskheader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.taskBody {
+    margin: 0px;
+}

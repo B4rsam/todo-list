@@ -26,15 +26,15 @@
 .taskContainer {
     background-color: var(--main-box-bg);
 }
-
-.delbtn {
-    background-color: var(--main-red);
-    color: var(--main-white-text);
-}
-
 .btnbox {
     display: flex;
     justify-content: space-between;
     background-color: var(--main-box-bg);
     padding: 8px;
+}
+
+.title {
+    margin: 0px;
+    color: var(--main-black-text);
+    text-align: center;
 }

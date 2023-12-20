@@ -6,6 +6,7 @@ const useViewController = () => {
     const firstRun = useRef(true)
     const [task, setTasks] = useState([])
     const [isLoading, setLoading] = useState(false)
+    const [editMode, setEdit] = useState(false)
 
     const handleUpdate = () => {
         setLoading(true)
@@ -33,7 +34,12 @@ const useViewController = () => {
         setTasks(task.concat(inTask))
     }
 
-    const details = useMemo(() => ({getTaskData, handleDeletion}), [task])
+    const toggleEditMode = () => {
+        console.log("edit")
+        setEdit(true)
+    }
+
+    const details = useMemo(() => ({getTaskData, handleDeletion, toggleEditMode, editMode}), [task])
     const taskIds = useMemo(() => task.map(({id}) => id), [task])
     const taskList = useMemo(() => taskIds.map((id) => <Task key={id} id={id}/>), [taskIds])
 
@@ -49,7 +55,8 @@ const useViewController = () => {
         taskList,
         details,
         dummyUpdate,
-        isLoading
+        isLoading,
+        toggleEditMode
     }
 }
 

@@ -11,14 +11,16 @@ function App() {
     taskList,
     details,
     dummyUpdate,
-    isLoading
+    isLoading,
+    toggleEditMode
   } = useViewController();
-  
+
   return (
     <>
     <div className='container btnbox'>
       <Taskbtn onAdd={dummyUpdate}/>
-      <EditBtn />
+      <h2 className='title'>Todo List</h2>
+      <EditBtn onClick={toggleEditMode}/>
     </div>
       <TaskProvider.Provider value={details}>
           <div className='container taskContainer'>{isLoading && <p>Loading Tasks</p>}{taskList}</div>   
