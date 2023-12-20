@@ -18,3 +18,22 @@
     padding-inline: 8px;
     text-align: center;
 }
+
+.addheader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.headertitle {
+    margin: 0px;
+}
+
+.cancelbtn {
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--main-red);
+    font-size: 18px;
+}
+
+.cancelbtn:hover {
+    color: var(--main-white-text);
+}

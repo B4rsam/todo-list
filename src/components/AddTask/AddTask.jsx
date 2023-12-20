@@ -2,6 +2,7 @@ import { addTask } from '../../service/apiRequest'
 import { useState } from 'react'
 import './addtask.css'
 import '../../styles/global.css'
+import { IoClose } from "react-icons/io5";
 
 const AddTask = ({onAdd, onExit}) => {
     const [task, setTask] = useState({
@@ -37,8 +38,8 @@ const AddTask = ({onAdd, onExit}) => {
         <div className='wrapper'>
             <div className='container addBox'>
                 <div className='header addheader'>
-                    <h1>Add a Task</h1> 
-                    <button className='btn delbtn' onClick={onExit}>Cancel</button>
+                    <h1 className='headertitle'>Add a Task</h1> 
+                    <button className='btn cancelbtn' onClick={onExit} title='Cancel'><IoClose /></button>
                 </div>
                 <form>
                     <input id="taskData" className="taskDescription" onChange={handleDescription} placeholder='Task Description' />

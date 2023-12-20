@@ -2,6 +2,7 @@ import { useState } from 'react'
 import AddTask from "../AddTask/AddTask"
 import './taskbtn.css'
 import '../../styles/global.css'
+import { IoAddSharp } from "react-icons/io5"
 
 const Taskbtn = ({onAdd}) => {
     const [modal, showModal] = useState(false)

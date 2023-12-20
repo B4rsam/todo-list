@@ -2,3 +2,8 @@
     background-color: var(--main-color);
     color: var(--main-white-text);
 }
+
+.taskbtn:hover {
+    background-color: var(--main-white-text);
+    color: var(--main-color);
+}
