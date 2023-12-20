@@ -13,7 +13,7 @@ function App() {
     dummyUpdate,
     isLoading
   } = useViewController();
-  console.log(isLoading)
+  
   return (
     <>
     <div className='container btnbox'>
@@ -21,8 +21,7 @@ function App() {
       <EditBtn />
     </div>
       <TaskProvider.Provider value={details}>
-        
-          <div className='container taskContainer'>{isLoading && <p>Loading</p>}{taskList}</div>   
+          <div className='container taskContainer'>{isLoading && <p>Loading Tasks</p>}{taskList}</div>   
       </TaskProvider.Provider>
     </>
   )

@@ -1,24 +1,15 @@
 import { useState } from 'react';
 import { TaskProvider } from '../../App';
+import { editStatus } from '../../service/apiRequest';
 import './task.css'
 import {memo, useContext} from "react";
 
 const Task = ({id}) => {
     const {getTaskData, handleDeletion} = useContext(TaskProvider)
-    const [task, editTask] = useState({
-        todo: "",
-        completed: false,
-        id: 100
-    })
     const taskData = getTaskData(id)
 
-    const handleEdit = (event) => {
-        editTask({
-            todo: "",
-            completed: event.target.checked,
-            id: 100
-        })
-        console.log(task)
+    const handleStatus = (event) => {
+        editStatus(event.target.id, event.target.checked)
     }
 
     return (
@@ -29,7 +20,7 @@ const Task = ({id}) => {
             </div>
             <div className='taskInput'>
                 <div className='chkbx'>
-                    <input className="taskCheck" type="checkbox" defaultChecked={taskData.completed} onChange={handleEdit} />
+                    <input className="taskCheck" id={taskData.id} type="checkbox" defaultChecked={taskData.completed} onChange={handleStatus} />
                     <span>Completed</span> 
                 </div>
                 

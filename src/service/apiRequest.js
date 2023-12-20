@@ -17,4 +17,10 @@ function addTask(task) {
     })
 }
 
-export {getTasks,deleteTask,addTask}
+function editStatus(id, status) {
+    return apiInstance.put(`/${id}`, {
+        completed: status
+    })
+}
+
+export {getTasks, deleteTask, addTask, editStatus}
