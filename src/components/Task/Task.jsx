@@ -5,6 +5,7 @@ import './task.css'
 import {memo, useContext} from "react";
 import { MdOutlineDelete } from "react-icons/md";
 import { MdOutlineModeEdit } from "react-icons/md";
+import { FaCheck } from "react-icons/fa";
 
 const Task = ({id}) => {
     const {getTaskData, handleDeletion, editMode} = useContext(TaskProvider)
@@ -25,7 +26,7 @@ const Task = ({id}) => {
             <div className='taskbtns'>
                 <button className='btn delbtn' id={taskData.id} onClick={() => handleDeletion(taskData.id)} title='Delete Task'><MdOutlineDelete /></button>
                 <button className='btn editbtn' id={taskData.id} title='Edit Task'><MdOutlineModeEdit /></button>
-                <input className="taskCheck" id={taskData.id} type="checkbox" defaultChecked={taskData.completed} onChange={handleStatus} title='Status'/>
+                <input className="taskCheck" id={taskData.id} type="checkbox" defaultChecked={taskData.completed} onChange={handleStatus} title='Task Status' content={<FaCheck />}/>
             </div>  
         </div>
     )
