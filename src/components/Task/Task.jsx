@@ -4,6 +4,7 @@ import { editStatus } from '../../service/apiRequest';
 import './task.css'
 import {memo, useContext} from "react";
 import { MdOutlineDelete } from "react-icons/md";
+import { MdOutlineModeEdit } from "react-icons/md";
 
 const Task = ({id}) => {
     const {getTaskData, handleDeletion, editMode} = useContext(TaskProvider)
@@ -15,20 +16,17 @@ const Task = ({id}) => {
 
     return (
         <div className="taskCard container">
-            
-            <div className='taskheader'>
-                <h1 className="taskBody">{taskData.todo}</h1>
-                <button className='btn delbtn' id={taskData.id} onClick={() => handleDeletion(taskData.id)} title='Delete Task'><MdOutlineDelete /></button>
-            </div>
-            <p className="taskId">Task ID: {taskData.id}</p>
-            <div className='taskInput'>
-                <div className='chkbx'>
-                    <input className="taskCheck" id={taskData.id} type="checkbox" defaultChecked={taskData.completed} onChange={handleStatus} />
-                    <span>Completed</span> 
+            <div className='taskcontent'>
+                <div className='taskheader'>
+                    <h1 className="taskBody">{taskData.todo}</h1>
+                    <p className="taskId">Task ID: {taskData.id}</p>
                 </div>
-                
             </div>
-            
+            <div className='taskbtns'>
+                <button className='btn delbtn' id={taskData.id} onClick={() => handleDeletion(taskData.id)} title='Delete Task'><MdOutlineDelete /></button>
+                <button className='btn editbtn' id={taskData.id} title='Edit Task'><MdOutlineModeEdit /></button>
+                <input className="taskCheck" id={taskData.id} type="checkbox" defaultChecked={taskData.completed} onChange={handleStatus} title='Status'/>
+            </div>  
         </div>
     )
 }

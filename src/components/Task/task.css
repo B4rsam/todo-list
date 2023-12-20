@@ -1,5 +1,7 @@
 .taskCard {
     background-color: var(--main-card-bg);
+    display: flex;
+    justify-content: space-between;
 }
 
 .delbtn {
@@ -13,11 +15,15 @@
     color: var(--main-white-text)
 }
 
-.taskheader {
-    display: flex;
-    justify-content: space-between;
-}
-
 .taskBody {
     margin: 0px;
+}
+
+.taskbtns {
+    display: flex;
+    flex-direction: column;
+}
+
+.editbtn:hover {
+    color: var(--main-white-text);
 }
