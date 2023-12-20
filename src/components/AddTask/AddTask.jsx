@@ -4,18 +4,15 @@ import './addtask.css'
 import '../../styles/global.css'
 
 const AddTask = ({onAdd, onExit}) => {
-    const [isLoading, setLoading] = useState(false)
     const [task, setTask] = useState({
         todo: "",
         completed: false,
         id: 100
     })
     const handleSubmit = () => {
-        setLoading(true)
         addTask(task).then(() => {
             onAdd(task)  
         }).catch().finally(() => {
-            setLoading(false)
             onExit()
         })
         

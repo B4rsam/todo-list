@@ -5,10 +5,13 @@ import Task from '../components/Task/Task'
 const useViewController = () => {
     const firstRun = useRef(true)
     const [task, setTasks] = useState([])
+    const [isLoading, setLoading] = useState(false)
 
     const handleUpdate = () => {
-        getTasks().then((data) => {
-          setTasks(data.data.todos)})
+        setLoading(true)
+        getTasks().catch().then((data) => {
+            setLoading(false)
+            setTasks(data.data.todos)})
     }
 
     const getTaskData = (id) => {
@@ -45,7 +48,8 @@ const useViewController = () => {
     return {
         taskList,
         details,
-        dummyUpdate
+        dummyUpdate,
+        isLoading
     }
 }
 

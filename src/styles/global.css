@@ -35,4 +35,6 @@
 .btnbox {
     display: flex;
     justify-content: space-between;
+    background-color: var(--main-box-bg);
+    padding: 8px;
 }
