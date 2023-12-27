@@ -41,12 +41,15 @@ const AddTask = ({onAdd, onExit}) => {
                     <h1 className='headertitle'>Add a Task</h1> 
                     <button className='btn cancelbtn' onClick={onExit} title='Cancel'><IoClose /></button>
                 </div>
-                <form>
-                    <input id="taskData" className="taskDescription" onChange={handleDescription} placeholder='Task Description' />
-                    <input id="taskStatus" type='checkbox' onChange={handleCheckbox} />
-                    <span>Completed</span>
+                <form className='taskform'>
+                    <input id="taskData" className="taskDescription" onChange={handleDescription} placeholder='Task Details' />
+                    <div className='addcheck'>
+                        <span>Task Status: </span>
+                        <input id="taskStatus" className="taskCheck" type='checkbox' onChange={handleCheckbox} title='Task Status'/>  
+                    </div>
+                    
                 </form>
-                <button className='btn taskbtn' onClick={handleSubmit}>Submit Task</button>
+                <button className='btn taskbtn submit' onClick={handleSubmit}>Submit Task</button>
             </div>
         </div>
     )

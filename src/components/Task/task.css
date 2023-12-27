@@ -29,25 +29,3 @@
 .editbtn:hover {
     color: var(--main-white-text);
 }
-
-.taskCheck {
-    appearance: none;
-    margin: 0px;
-    padding: 0px;
-    background-color: rgba(0,0,0,0);
-    border: 1px solid;
-    border-radius: 4px;
-    border-color: var(--main-black-text);
-    height: 16px;
-    width: 16px;
-    align-self: center;
-    color: var(--main-black-text);
-}
-
-.taskCheck:checked {
-    background-color: var(--main-color);
-}
-
-.taskCheck:hover {
-    border-color: var(--main-white-text);
-}
