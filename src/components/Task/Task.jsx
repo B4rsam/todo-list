@@ -14,7 +14,7 @@ const Task = ({id}) => {
     const handleStatus = (event) => {
         editStatus(event.target.id, event.target.checked)
     }
-
+    
     return (
         <div className="taskCard container">
             <div className='taskcontent'>
