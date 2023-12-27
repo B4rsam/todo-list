@@ -41,7 +41,7 @@
 }
 
 .cancelbtn:hover {
-    color: var(--main-white-text);
+    cursor: pointer;
 }
 
 .taskDescription {

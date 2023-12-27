@@ -23,4 +23,10 @@ function editStatus(id, status) {
     })
 }
 
-export {getTasks, deleteTask, addTask, editStatus}
+function editTask(id, text) {
+    return apiInstance.put(`/${id}`, {
+        todo: text
+    })
+}
+
+export {getTasks, deleteTask, addTask, editStatus, editTask}
