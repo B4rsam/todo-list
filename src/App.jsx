@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-    <div className='container btnbox'>
+    <div className='backgrnd btnbox'>
       <Taskbtn onAdd={dummyUpdate}/>
       <h2 className='title'>Todo List</h2>
     </div>

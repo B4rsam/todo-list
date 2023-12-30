@@ -1,20 +1,21 @@
 
 
 .taskCard {
-    background-color: var(--main-card-bg);
+    color: var(--on-primary-container);
+    background-color: var(--primary-container);
     display: flex;
+    flex-direction: column;
     flex-grow: 0;
     justify-content: space-between;
-    height: 80px;
-    overflow-y: scroll;
+    height: 100px;
+    overflow-y: hidden;
     margin-block: 8px;
 }
 
 .delbtn {
-    padding: 4px;
-    color: var(--main-red);
-    background-color: rgba(0,0,0,0);
+    color: var(--on-primary-container);
     font-size: 18px;
+    background-color: var(--secondary-color);
 }
 .delbtn:hover {
     cursor: pointer;
@@ -31,7 +32,15 @@
 
 .taskbtns {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    place-content: end;
+    margin: 0;
+    padding: 4px;
+}
+
+.editbtn {
+    background-color: var(--secondary-color);
+    color: var(--on-primary-container)
 }
 .editbtn:hover {
     cursor: pointer;
