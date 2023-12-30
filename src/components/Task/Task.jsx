@@ -16,8 +16,9 @@ const Task = ({id}) => {
     }
 
     const handleEdit = (id) => {
-        //editTask(e.id, "Test")
-        dummyEdit(id,"test")
+        editTask(id, "Test").then(() => {
+            dummyEdit(id,"test")
+        })
     }
 
     return (

@@ -38,14 +38,10 @@ const useViewController = () => {
     }
 
     const dummyEdit = (id, text) => {
-        const tempTask = {
-            todo: text,
-            completed: true,
-            userId: 1
-        }
-        
-        handleDeletion(id)
-        dummyUpdate(tempTask)
+        setTasks((task) => {
+            task[id-1].todo = text
+            return task
+        })
     }
 
     const details = useMemo(() => ({getTaskData, handleDeletion, dummyEdit}), [task])

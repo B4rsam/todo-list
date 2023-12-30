@@ -8,7 +8,7 @@
     flex-grow: 0;
     justify-content: space-between;
     height: 100px;
-    overflow-y: hidden;
+    overflow-y: scroll;
     margin-block: 8px;
 }
 
