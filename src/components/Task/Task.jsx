@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { TaskProvider } from '../../App';
-import { editStatus } from '../../service/apiRequest';
+import { editStatus,editTask } from '../../service/apiRequest';
 import './task.css'
 import {memo, useContext} from "react";
 import { MdOutlineDelete } from "react-icons/md";
@@ -8,13 +8,18 @@ import { MdOutlineModeEdit } from "react-icons/md";
 import { FaCheck } from "react-icons/fa";
 
 const Task = ({id}) => {
-    const {getTaskData, handleDeletion, editMode} = useContext(TaskProvider)
+    const {getTaskData, handleDeletion, dummyEdit} = useContext(TaskProvider)
     const taskData = getTaskData(id)
 
     const handleStatus = (event) => {
         editStatus(event.target.id, event.target.checked)
     }
-    
+
+    const handleEdit = (id) => {
+        //editTask(e.id, "Test")
+        dummyEdit(id,"test")
+    }
+
     return (
         <div className="taskCard container">
             <div className='taskcontent'>
@@ -25,7 +30,7 @@ const Task = ({id}) => {
             </div>
             <div className='taskbtns'>
                 <button className='btn delbtn' id={taskData.id} onClick={() => handleDeletion(taskData.id)} title='Delete Task'><MdOutlineDelete /></button>
-                <button className='btn editbtn' id={taskData.id} title='Edit Task'><MdOutlineModeEdit /></button>
+                <button className='btn editbtn' id={taskData.id} title='Edit Task' onClick={() => handleEdit(taskData.id)}><MdOutlineModeEdit /></button>
                 <input className="taskCheck" id={taskData.id} type="checkbox" defaultChecked={taskData.completed} onChange={handleStatus} title='Task Status' content={<FaCheck />}/>
             </div>  
         </div>

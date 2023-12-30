@@ -37,7 +37,18 @@ const useViewController = () => {
         setTasks(task.concat(inTask))
     }
 
-    const details = useMemo(() => ({getTaskData, handleDeletion}), [task])
+    const dummyEdit = (id, text) => {
+        const tempTask = {
+            todo: text,
+            completed: true,
+            userId: 1
+        }
+        
+        handleDeletion(id)
+        dummyUpdate(tempTask)
+    }
+
+    const details = useMemo(() => ({getTaskData, handleDeletion, dummyEdit}), [task])
     const taskIds = useMemo(() => task.map(({id}) => id), [task])
     const taskList = useMemo(() => taskIds.map((id) => <Task key={id} id={id}/>), [taskIds])
 
@@ -53,6 +64,7 @@ const useViewController = () => {
         taskList,
         details,
         dummyUpdate,
+        //dummyEdit,
         isLoading,
     }
 }

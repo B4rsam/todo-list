@@ -24,6 +24,7 @@ function editStatus(id, status) {
 }
 
 function editTask(id, text) {
+    //editing unsupported
     return apiInstance.put(`/${id}`, {
         todo: text
     })
