@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from 'react'
-import { getTasks, deleteTask, editTask, addTask} from '../service/apiRequest'
+import { getTasks, deleteTask, addTask} from '../service/apiRequest'
 import Task from '../components/Task/Task'
 
 const useViewController = () => {
@@ -23,10 +23,14 @@ const useViewController = () => {
     }
 
     const handleDeletion = (id) => {
-        deleteTask(id).then(() => {
-            const filteredItem = task.filter((task) => task.id !== id)
-            setTasks(filteredItem)
-        })
+        if (confirm("Are you sure you wish to delete this task?"))
+        {
+            deleteTask(id).then(() => {
+                const filteredItem = task.filter((task) => task.id !== id)
+                setTasks(filteredItem)
+                }) 
+        }
+        
     }
 
     const dummyUpdate = (inTask) => {
@@ -54,7 +58,7 @@ const useViewController = () => {
 
     const details = useMemo(() => ({getTaskData, handleDeletion}), [task])
     const taskIds = useMemo(() => task.map(({id}) => id), [task])
-    const taskList = useMemo(() => taskIds.map((id) => <Task key={id} id={id} onEdit={dummyEdit}/>), [taskIds])
+    const taskList = useMemo(() => taskIds.map((id) => <Task key={id} id={id} onEdit={dummyEdit} />), [taskIds])
 
     useEffect(() => {
         if (firstRun.current)

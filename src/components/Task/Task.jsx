@@ -23,6 +23,9 @@ const Task = ({id, onEdit}) => {
 
     return (
         <div className="taskCard container">
+            {/* {editMode && <div className='taskEditor'>
+                <input className='taskDescription'/>
+            </div>} */}
             <div className='taskcontent'>
                 <div className='taskheader'>
                     <h1 className="taskBody">{taskData.todo}</h1>
