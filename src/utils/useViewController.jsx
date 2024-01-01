@@ -46,7 +46,7 @@ const useViewController = () => {
             ...task[id],
             todo: text
         }
-        //this code is a warcrime probably
+        //change this
         deleteTask(id).then(() => {
             handleDeletion(id)
         }).then(() => {

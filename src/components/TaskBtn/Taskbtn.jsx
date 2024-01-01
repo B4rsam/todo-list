@@ -13,7 +13,7 @@ const Taskbtn = ({onAdd}) => {
 
     return (
         <>
-            <button className="btn taskbtn" onClick={handleModal} title='Add a task'><IoAddSharp /></button>   
+            <button className="btn taskbtn" onClick={handleModal} title='Add a task'><span className='iconHolder'><IoAddSharp /></span></button>   
             {modal && <AddTask onAdd={onAdd} onExit={handleModal}/>}
         </>
     )

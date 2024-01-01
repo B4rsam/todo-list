@@ -34,8 +34,8 @@ const Task = ({id, onEdit}) => {
                 </div>
             </div>
             <div className='taskbtns'>
-                <button className='btn delbtn' id={taskData.id} onClick={() => handleDeletion(taskData.id)} title='Delete Task'><MdOutlineDelete /></button>
-                <button className='btn editbtn' id={taskData.id} title='Edit Task' onClick={() => handleEdit(taskData.id)}><MdOutlineModeEdit /></button>
+                <button className='btn delbtn' id={taskData.id} onClick={() => handleDeletion(taskData.id)} title='Delete Task'><span className='iconHolder'><MdOutlineDelete /></span></button>
+                <button className='btn editbtn' id={taskData.id} title='Edit Task' onClick={() => handleEdit(taskData.id)}><span className='iconHolder'><MdOutlineModeEdit /></span></button>
                 <input className="taskCheck" id={taskData.id} type="checkbox" defaultChecked={taskData.completed} onChange={handleStatus} title='Task Status' content={<FaCheck />}/>
             </div>  
         </div>

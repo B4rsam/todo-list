@@ -82,3 +82,8 @@
 .taskCheck:hover {
     cursor: pointer;
 }
+
+.iconHolder {
+    display: flex;
+    align-items: center
+}
