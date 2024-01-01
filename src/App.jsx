@@ -9,7 +9,6 @@ function App() {
     taskList,
     details,
     dummyUpdate,
-    //dummyEdit,
     isLoading
   } = useViewController();
 
@@ -20,7 +19,7 @@ function App() {
       <h2 className='title'>Todo List</h2>
     </div>
       <TaskProvider.Provider value={details}>
-          <div className='container taskContainer'>{isLoading && <p>Loading Tasks</p>}{taskList}</div>   
+          <div className='container taskContainer' >{isLoading && <p>Loading Tasks</p>}{taskList}</div>   
       </TaskProvider.Provider>
     </>
   )

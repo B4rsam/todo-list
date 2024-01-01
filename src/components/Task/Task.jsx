@@ -7,8 +7,8 @@ import { MdOutlineDelete } from "react-icons/md";
 import { MdOutlineModeEdit } from "react-icons/md";
 import { FaCheck } from "react-icons/fa";
 
-const Task = ({id}) => {
-    const {getTaskData, handleDeletion, dummyEdit} = useContext(TaskProvider)
+const Task = ({id, onEdit}) => {
+    const {getTaskData, handleDeletion} = useContext(TaskProvider)
     const taskData = getTaskData(id)
 
     const handleStatus = (event) => {
@@ -17,7 +17,7 @@ const Task = ({id}) => {
 
     const handleEdit = (id) => {
         editTask(id, "Test").then(() => {
-            dummyEdit(id,"test")
+            onEdit(id,"test")
         })
     }
 

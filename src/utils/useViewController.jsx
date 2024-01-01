@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from 'react'
-import { getTasks, deleteTask, editTask} from '../service/apiRequest'
+import { getTasks, deleteTask, editTask, addTask} from '../service/apiRequest'
 import Task from '../components/Task/Task'
 
 const useViewController = () => {
@@ -38,15 +38,23 @@ const useViewController = () => {
     }
 
     const dummyEdit = (id, text) => {
-        setTasks((task) => {
-            task[id-1].todo = text
-            return task
+        const temp = {
+            ...task[id],
+            todo: text
+        }
+        //this code is a warcrime probably
+        deleteTask(id).then(() => {
+            handleDeletion(id)
+        }).then(() => {
+            addTask(temp).then(() => {
+                dummyUpdate(temp)
+            })
         })
     }
 
-    const details = useMemo(() => ({getTaskData, handleDeletion, dummyEdit}), [task])
+    const details = useMemo(() => ({getTaskData, handleDeletion}), [task])
     const taskIds = useMemo(() => task.map(({id}) => id), [task])
-    const taskList = useMemo(() => taskIds.map((id) => <Task key={id} id={id}/>), [taskIds])
+    const taskList = useMemo(() => taskIds.map((id) => <Task key={id} id={id} onEdit={dummyEdit}/>), [taskIds])
 
     useEffect(() => {
         if (firstRun.current)
@@ -60,7 +68,6 @@ const useViewController = () => {
         taskList,
         details,
         dummyUpdate,
-        //dummyEdit,
         isLoading,
     }
 }
