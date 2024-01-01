@@ -36,7 +36,7 @@ const useViewController = () => {
     const dummyUpdate = (inTask) => {
         inTask = {
             ...inTask,
-            id: 100
+            id: task.length+1
         }
         setTasks(task.concat(inTask))
     }

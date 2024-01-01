@@ -34,14 +34,20 @@
     display: flex;
     flex-direction: row;
     place-content: end;
+    position: sticky;
     margin: 0;
     padding: 4px;
 }
 
 .editbtn {
     background-color: var(--secondary-color);
-    color: var(--on-primary-container)
+    color: var(--on-primary-container);
+    position: sticky;
 }
 .editbtn:hover {
     cursor: pointer;
+}
+
+.taskContent {
+    overflow-y: scroll;
 }
