@@ -16,8 +16,9 @@ const Task = ({id, onEdit}) => {
     }
 
     const handleEdit = (id) => {
-        editTask(id, "Test").then(() => {
-            onEdit(id,"test")
+        const input = prompt("Enter new task details:")
+        editTask(id, input).then(() => {
+            onEdit(id,input)
         })
     }
 
