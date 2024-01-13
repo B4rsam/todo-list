@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import AddTask from "../AddTask/AddTask"
-import './taskbtn.css'
-import '../../styles/global.css'
 import { IoAddSharp } from "react-icons/io5"
+import Button from '../../designSystem/button/button'
 
 const Taskbtn = ({onAdd}) => {
     const [modal, showModal] = useState(false)
@@ -13,7 +12,8 @@ const Taskbtn = ({onAdd}) => {
 
     return (
         <>
-            <button className="btn taskbtn" onClick={handleModal} title='Add a task'><span className='iconHolder'><IoAddSharp /></span></button>   
+            {/*<button className="btn taskbtn" onClick={handleModal} title='Add a task'><span className='iconHolder'><IoAddSharp /></span></button>   */}
+            <Button children={<span className='iconHolder'><IoAddSharp /></span>} rounded={true} title="Add a Task" onClick={handleModal}/>
             {modal && <AddTask onAdd={onAdd} onExit={handleModal}/>}
         </>
     )

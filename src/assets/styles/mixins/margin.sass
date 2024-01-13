@@ -1,0 +1,35 @@
+@use "sass:math"
+
+=margin()
+$marginStandard: (0, 4, 8, 16, 24, 32)
+$marginSides: (top, right, bottom, left)
+$marginSingle: 4
+
+@each $space in $marginStandard
+    @each $side in $marginSides
+        .m-#{str-slice($side, 0, 1)}-#{$space}
+            margin-#{$side}: #{$space}px !important
+
+        .p-#{str-slice($side, 0, 1)}-#{$space}
+            padding-#{$side}: #{$space}px !important
+
+    @each $single in $marginSingle
+        .m-#{$space}
+            margin: #{$space}px !important
+
+        .p-#{$space}
+            padding: #{$space}px !important
+
+        .m-x-#{$space}
+            margin: 0 #{$space}px !important
+
+        .m-y-#{$space}
+            margin: #{$space}px 0 !important
+
+        .p-x-#{$space}
+            padding-right: #{$space}px !important
+            padding-left: #{$space}px !important
+
+        .p-y-#{$space}
+            padding-top: #{$space}px !important
+            padding-bottom: #{$space}px !important

@@ -1,4 +1,3 @@
-import './editbtn.css'
 
 const EditBtn = ({onClick}) => {
     return (

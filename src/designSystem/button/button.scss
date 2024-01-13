@@ -1,0 +1,26 @@
+@import '../../assets/styles/palette.sass';
+
+.button {
+    outline: none;
+    border-radius: 8px;
+    background-color: $tertiary;
+    color: $tertiary-on;
+    padding: 8px 16px;
+    height: 48px;
+    min-width: 50px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.button-rounded {
+    height: 36px !important;
+    width: 36px !important;
+    min-width: 0 !important;
+    border-radius: 100% !important;
+}
+
+.iconFix {
+    display: flex;
+    align-items: center
+}

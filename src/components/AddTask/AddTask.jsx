@@ -1,8 +1,8 @@
 import { addTask } from '../../service/apiRequest'
 import { useRef, useState } from 'react'
-import './addtask.css'
-import '../../styles/global.css'
 import { IoClose } from "react-icons/io5";
+import './addtask.scss'
+
 
 const AddTask = ({onAdd, onExit}) => {
     const [error, setError] = useState(false)
