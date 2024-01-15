@@ -21,7 +21,7 @@ function App() {
     </div>
     <div className='spacer'/>
       <TaskProvider.Provider value={details}>
-          <div className='container taskContainer p-24' >{isLoading && <p>Loading Tasks</p>}{taskList}</div>   
+          <div className='container taskContainer p-24 m-b-16' >{isLoading && <p>Loading Tasks</p>}{taskList}</div>   
       </TaskProvider.Provider>
     </>
   )
