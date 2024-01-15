@@ -10,3 +10,15 @@
     right: 0;
     bottom: 0;
 }
+
+.addBox {
+    max-width: 700px;
+    width: 100%;
+    margin: auto;
+    background-color: $primary !important;
+
+    .addheader {
+        display: flex;
+        justify-content: space-between;
+    }
+}

@@ -19,6 +19,7 @@ function App() {
     <h2 className='title font-12'>Todo List</h2>
       <Taskbtn onAdd={dummyUpdate}/>
     </div>
+    <div className='spacer'/>
       <TaskProvider.Provider value={details}>
           <div className='container taskContainer p-24' >{isLoading && <p>Loading Tasks</p>}{taskList}</div>   
       </TaskProvider.Provider>

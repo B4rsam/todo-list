@@ -2,7 +2,7 @@ import { addTask } from '../../service/apiRequest'
 import { useRef, useState } from 'react'
 import { IoClose } from "react-icons/io5";
 import './addtask.scss'
-
+import Button from '../../designSystem/button/button';
 
 const AddTask = ({onAdd, onExit}) => {
     const [error, setError] = useState(false)
@@ -31,10 +31,10 @@ const AddTask = ({onAdd, onExit}) => {
 
     return (
         <div className='wrapper'>
-            <div className='container addBox'>
+            <div className='container addBox p-16 m-t-16'>
                 <div className='header addheader'>
                     <h1 className='headertitle'>Add a Task</h1> 
-                    <button className='btn cancelbtn' onClick={onExit} title='Cancel'><IoClose /></button>
+                    <Button onClick={onExit} title='Cancel' children={<span className='iconHolder'><IoClose /></span>}/>
                 </div>
                 <form className='taskform'>
                     <input id="taskData" className="taskDescription" ref={todoRef} placeholder='Task Details' />
