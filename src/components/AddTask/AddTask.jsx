@@ -3,6 +3,7 @@ import { useRef, useState } from 'react'
 import { IoClose } from "react-icons/io5";
 import './addtask.scss'
 import Button from '../../designSystem/button/button';
+import Checkbox from '../../designSystem/checkbox/checkbox';
 
 const AddTask = ({onAdd, onExit}) => {
     const [error, setError] = useState(false)
@@ -38,11 +39,11 @@ const AddTask = ({onAdd, onExit}) => {
                 </div>
                 <form className='taskform'>
                     <input id="taskData" className="taskDescription" ref={todoRef} placeholder='Task Details' />
-                    <div className='addcheck'>
+                    {/* <div className='addcheck'>
                         <span>Task Status: </span>
                         <input id="taskStatus" className="taskCheck" type='checkbox' ref={statusRef} title='Task Status'/>  
-                    </div>
-                    
+                        <Checkbox id='taskStatus' ref={statusRef} title='Task Status'/>
+                    </div> */}
                 </form>
                 <Button onClick={handleSubmit} title='Submit Task' long={true} children={"Submit Task"} />
                 {error && <p>Task details must not be empty!</p>}

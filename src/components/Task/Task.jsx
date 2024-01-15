@@ -6,6 +6,7 @@ import { MdOutlineDelete } from "react-icons/md";
 import { MdOutlineModeEdit } from "react-icons/md";
 import { FaCheck } from "react-icons/fa";
 import Button from '../../designSystem/button/button';
+import Checkbox from '../../designSystem/checkbox/checkbox';
 
 const Task = ({id, onEdit}) => {
     const {getTaskData, handleDeletion} = useContext(TaskProvider)
@@ -33,7 +34,7 @@ const Task = ({id, onEdit}) => {
             <div className='taskbtns'>
                 <Button children={<span className='iconFix'><MdOutlineDelete /></span>} title='Delete Task' onClick={() => handleDeletion(taskData.id)} rounded={true}/>
                 <Button children={<span className='iconFix'><MdOutlineModeEdit /></span>} title='Edit Task' onClick={() => handleEdit(taskData.id)} rounded={true}/>
-                <input className="taskCheck" id={taskData.id} type="checkbox" defaultChecked={taskData.completed} onChange={handleStatus} title='Task Status' content={<FaCheck />}/>
+                <Checkbox state={taskData.completed} id={taskData.id} onChange={handleStatus} title='Task Status' content={<FaCheck />}/>
             </div>  
         </div>
     )
