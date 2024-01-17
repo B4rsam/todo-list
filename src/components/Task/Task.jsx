@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { TaskProvider } from '../../App';
 import { editStatus,editTask } from '../../service/apiRequest';
 import {memo, useContext} from "react";
@@ -7,6 +6,8 @@ import { MdOutlineModeEdit } from "react-icons/md";
 import { FaCheck } from "react-icons/fa";
 import Button from '../../designSystem/button/button';
 import Checkbox from '../../designSystem/checkbox/checkbox';
+import '../../assets/styles/main.sass';
+import './task.scss';
 
 const Task = ({id, onEdit}) => {
     const {getTaskData, handleDeletion} = useContext(TaskProvider)
@@ -27,14 +28,14 @@ const Task = ({id, onEdit}) => {
         <div className="taskCard container m-b-8 p-16">
             <div className='taskcontent'>
                 <div className='taskheader'>
-                    <h1 className="taskBody">{taskData.todo}</h1>
-                    <p className="taskId">Task ID: {taskData.id}</p>
+                    <h1 className="taskBody font-20">{taskData.todo}</h1>
+                    <p className="taskId font-4">Task ID: {taskData.id}</p>
                 </div>
             </div>
             <div className='taskbtns'>
-                <Button children={<span className='iconFix'><MdOutlineDelete /></span>} title='Delete Task' onClick={() => handleDeletion(taskData.id)} rounded={true}/>
-                <Button children={<span className='iconFix'><MdOutlineModeEdit /></span>} title='Edit Task' onClick={() => handleEdit(taskData.id)} rounded={true}/>
-                <Checkbox state={taskData.completed} id={taskData.id} onChange={handleStatus} title='Task Status' content={<FaCheck />}/>
+                <Button className='m-4' children={<span className='iconFix'><MdOutlineDelete /></span>} title='Delete Task' onClick={() => handleDeletion(taskData.id)} rounded={true}/>
+                <Button className='m-4' children={<span className='iconFix'><MdOutlineModeEdit /></span>} title='Edit Task' onClick={() => handleEdit(taskData.id)} rounded={true}/>
+                <Checkbox className='' state={taskData.completed} id={taskData.id} onChange={handleStatus} title='Task Status' content={<FaCheck />}/>
             </div>  
         </div>
     )

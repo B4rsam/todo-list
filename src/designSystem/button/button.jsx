@@ -2,7 +2,7 @@ import './button.scss'
 
 const Button = (props) => {
     return (
-        <button {...props} className={`button ${props.rounded ? 'button-rounded' : ''} ${props.cancel ? 'button-cancel' : ''} ${props.long ? 'button-long' : ''}`}title={props.title}>{props.children}</button>
+        <button {...props} className={`${props.className ? props.className+' ' : ''}button${props.rounded ? ' button-rounded' : ''}${props.cancel ? ' button-cancel' : ''}${props.long ? ' button-long' : ''}`}title={props.title}>{props.children}</button>
     )
 }
 

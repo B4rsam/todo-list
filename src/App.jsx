@@ -16,8 +16,8 @@ function App() {
   return (
     <>
     <div className='backgrnd btnbox'>
-    <h2 className='title font-12'>Todo List</h2>
-      <Taskbtn onAdd={dummyUpdate}/>
+    <h2 className='title font-12 m-16'>Todo List</h2>
+      <Taskbtn onAdd={dummyUpdate} />
     </div>
     <div className='spacer'/>
       <TaskProvider.Provider value={details}>

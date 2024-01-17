@@ -1,0 +1,14 @@
+@import '../../assets/styles/palette.sass';
+
+.taskbtns {
+    display: flex;
+    place-content: flex-end;
+}
+
+.checkbox {
+    align-self: center;
+}
+
+.taskCard {
+    height: 175px;
+}

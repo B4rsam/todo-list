@@ -15,7 +15,8 @@
     max-width: 700px;
     width: 100%;
     margin: auto;
-    background-color: $primary !important;
+    background-color: $primary-container !important;
+    color: $primary-on-container;
 
     .addheader {
         display: flex;
