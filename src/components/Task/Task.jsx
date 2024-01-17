@@ -28,8 +28,8 @@ const Task = ({id, onEdit}) => {
         <div className="taskCard container m-b-8 p-16">
             <div className='taskcontent'>
                 <div className='taskheader'>
-                    <h1 className="taskBody font-20">{taskData.todo}</h1>
-                    <p className="taskId font-4">Task ID: {taskData.id}</p>
+                    <h1 className="taskBody font-32">{taskData.todo}</h1>
+                    <p className="taskId font-10">Task ID: {taskData.id}</p>
                 </div>
             </div>
             <div className='taskbtns'>

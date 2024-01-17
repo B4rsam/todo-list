@@ -1,8 +1,8 @@
 @use "sass:math"
     
 =fontSize()
-    $fontSizes: (4, 8, 10, 12, 14, 16, 18, 20)
+$fontSizes: (4, 8, 10, 12, 14, 16, 18, 20, 24, 32, 36)
 
-    @each $size in $fontSizes
-        .font-#{$size}:
-            font-size: #{$size}px !important
+@each $size in $fontSizes
+    .font-#{$size}
+        font-size: #{$size}px !important
