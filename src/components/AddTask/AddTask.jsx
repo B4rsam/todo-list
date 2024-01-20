@@ -48,8 +48,8 @@ const AddTask = ({onAdd, onExit}) => {
         <div className='wrapper'>
             <div className='container addBox p-16 m-t-16'>
                 <div className='header addheader'>
-                    <h1 className='headertitle'>Add a Task</h1> 
-                    <Button onClick={onExit} title='Cancel' type={"cancel"} children={<span className='iconHolder'><IoClose /></span>}/>
+                    <h1 className='headertitle m-l-64'>Add a Task</h1> 
+                    <Button onClick={onExit} title='Cancel' type={"cancel"} className="m-l-32" children={<span className='iconHolder'><IoClose /></span>}/>
                 </div>
                 <form className='taskform'>
                     {/* <input id="taskData" className="taskDescription" ref={todoRef} placeholder='Task Details' /> */}
