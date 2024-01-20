@@ -12,7 +12,7 @@ const Taskbtn = ({onAdd}) => {
 
     return (
         <>
-            <Button className="m-16" children={<IoAddSharp />} rounded={true} title="Add a Task" onClick={handleModal}/>
+            <Button className="m-16" children={<IoAddSharp />} type={"rounded"} title="Add a Task" onClick={handleModal}/>
             {modal && <AddTask onAdd={onAdd} onExit={handleModal}/>}
         </>
     )

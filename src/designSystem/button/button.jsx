@@ -1,8 +1,21 @@
 import './button.scss'
 
 const Button = (props) => {
+
+    const btnType = () => {
+        switch(props.type)
+        {
+            case "rounded":
+                return "button-rounded";
+            case "long":
+                return "button-long";
+            case "cancel":
+                return "button-cancel";
+        }
+    }
+
     return (
-        <button {...props} className={`${props.className ? props.className+' ' : ''}button${props.rounded ? ' button-rounded' : ''}${props.cancel ? ' button-cancel' : ''}${props.long ? ' button-long' : ''}`}title={props.title}>{props.children}</button>
+        <button {...props} className={`button ${btnType()}`}title={props.title}>{props.children}</button>
     )
 }
 

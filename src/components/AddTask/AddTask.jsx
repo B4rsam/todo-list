@@ -4,6 +4,7 @@ import { IoClose } from "react-icons/io5";
 import './addtask.scss'
 import Button from '../../designSystem/button/button';
 import Checkbox from '../../designSystem/checkbox/checkbox';
+import TextField from '../../designSystem/textfield/textfield';
 
 const AddTask = ({onAdd, onExit}) => {
     const [error, setError] = useState(false)
@@ -35,17 +36,16 @@ const AddTask = ({onAdd, onExit}) => {
             <div className='container addBox p-16 m-t-16'>
                 <div className='header addheader'>
                     <h1 className='headertitle'>Add a Task</h1> 
-                    <Button onClick={onExit} title='Cancel' cancel={true} children={<span className='iconHolder'><IoClose /></span>}/>
+                    <Button onClick={onExit} title='Cancel' type={"cancel"} children={<span className='iconHolder'><IoClose /></span>}/>
                 </div>
                 <form className='taskform'>
                     <input id="taskData" className="taskDescription" ref={todoRef} placeholder='Task Details' />
-                    {/* <div className='addcheck'>
+                    <div className='addcheck'>
                         <span>Task Status: </span>
                         <input id="taskStatus" className="taskCheck" type='checkbox' ref={statusRef} title='Task Status'/>  
-                        <Checkbox id='taskStatus' ref={statusRef} title='Task Status'/>
-                    </div> */}
+                    </div>
                 </form>
-                <Button onClick={handleSubmit} title='Submit Task' long={true} children={"Submit Task"} />
+                <Button onClick={handleSubmit} title='Submit Task' type={"long"} children={"Submit Task"} />
                 {error && <p>Task details must not be empty!</p>}
             </div>
         </div>

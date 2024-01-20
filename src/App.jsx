@@ -15,8 +15,8 @@ function App() {
 
   return (
     <>
-    <div className='backgrnd btnbox'>
-    <h2 className='title font-32 m-16'>Todo List</h2>
+    <div className='backgrnd btnbox p-x-16'>
+      <h2 className='title font-32 m-16'>Todo List</h2>
       <Taskbtn onAdd={dummyUpdate} />
     </div>
     <div className='spacer'/>

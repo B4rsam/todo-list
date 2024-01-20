@@ -18,7 +18,7 @@
     .taskCard
         place-items: center
         background-color: $secondary-container
-        max-width: 95%
+        max-width: calc(100% - 32px)
         margin: auto
         display: block !important
         
@@ -27,8 +27,9 @@
     display: flex
     justify-content: space-between
     position: fixed
-    margin: 0px
     width: 100%
+    box-sizing: border-box
+    align-items: center
 
 .spacer 
     height: 96px
