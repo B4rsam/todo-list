@@ -15,8 +15,5 @@
 
     &:checked {
         background-color: $primary;
-        label:before {
-            content: '\f0c9';
-        }
     }
 }

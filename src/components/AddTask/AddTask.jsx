@@ -9,16 +9,29 @@ import TextField from '../../designSystem/textfield/textfield';
 const AddTask = ({onAdd, onExit}) => {
     const [error, setError] = useState(false)
 
-    const todoRef = useRef(null)
-    const statusRef = useRef(null)
+    // const todoRef = useRef(null)
+    // const statusRef = useRef(null)
+
+    let task = {
+        todo: null,
+        completed: null
+    }
+    
+    const handleDesc = (e) => {
+        task = {
+            ...task,
+            todo: e.target.value
+        }
+    }
+
+    const handleState = (e) => {
+        task = {
+            ...task,
+            completed: e.target.checked
+        }
+    }
 
     const handleSubmit = () => {
-        const task = {
-            todo: todoRef.current.value,
-            completed: statusRef.current.checked
-
-        }
-        console.log(task.todo)
         if (!task.todo) {
             setError(true)
             return;
@@ -39,10 +52,12 @@ const AddTask = ({onAdd, onExit}) => {
                     <Button onClick={onExit} title='Cancel' type={"cancel"} children={<span className='iconHolder'><IoClose /></span>}/>
                 </div>
                 <form className='taskform'>
-                    <input id="taskData" className="taskDescription" ref={todoRef} placeholder='Task Details' />
+                    {/* <input id="taskData" className="taskDescription" ref={todoRef} placeholder='Task Details' /> */}
+                    <TextField id="taskData" className="taskDescription" placeholder='Task Details' onChange={(e) => handleDesc(e)}/>
                     <div className='addcheck'>
                         <span>Task Status: </span>
-                        <input id="taskStatus" className="taskCheck" type='checkbox' ref={statusRef} title='Task Status'/>  
+                        {/* <input id="taskStatus" className="taskCheck" type='checkbox' ref={statusRef} title='Task Status'/> */}
+                        <Checkbox id="taskStatus" className="taskCheck" title='Task Status' onChange={(e) => handleState(e)}/> 
                     </div>
                 </form>
                 <Button onClick={handleSubmit} title='Submit Task' type={"long"} children={"Submit Task"} />
