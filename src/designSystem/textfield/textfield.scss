@@ -1,0 +1,13 @@
+@import '../../assets/styles/palette.sass';
+
+.textField {
+    appearance: none;
+    &:hover {
+        cursor: pointer;
+    }
+    padding: 8px;
+    padding-inline: 16px;
+    border-radius: 16px;
+    border-color: black solid;
+    border-width: 1px;
+}
