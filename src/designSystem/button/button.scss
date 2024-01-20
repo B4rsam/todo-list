@@ -30,8 +30,10 @@
 
 .button-long {
     min-width: 36px;
-    border-radius: 10%;
+    border-radius: 4px;
     background-color: $primary;
     color: $primary-on;
     appearance: none;
+    padding-inline: 16px;
+    padding-block: 4px;
 }
