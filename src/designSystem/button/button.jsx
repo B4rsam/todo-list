@@ -15,7 +15,7 @@ const Button = (props) => {
     }
 
     return (
-        <button {...props} className={`button ${btnType()}`}title={props.title}>{props.children}</button>
+        <button {...props} className={`button ${btnType()} ${props.className}`}title={props.title}>{props.children}</button>
     )
 }
 
